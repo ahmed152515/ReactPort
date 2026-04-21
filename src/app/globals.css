@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3f0ff;
+  --foreground: #130f2a;
+}
+
+.dark {
+  --background: #09061a;
+  --foreground: #f0eaff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at 10% 10%, #e9d5ff 0, transparent 34%),
+    radial-gradient(circle at 90% 0%, #bae6fd 0, transparent 38%),
+    var(--background);
+  color: var(--foreground);
+}
+
+.dark body {
+  background:
+    radial-gradient(circle at 10% 10%, #581c87 0, transparent 28%),
+    radial-gradient(circle at 90% 0%, #164e63 0, transparent 32%),
+    var(--background);
+}
+
+@layer components {
+  .section-wrap {
+    @apply py-16 md:py-24;
+  }
+  .site-container {
+    @apply mx-auto w-full max-w-7xl px-5 md:px-8;
+  }
+  .soft-card {
+    @apply rounded-2xl border border-violet-100/80 bg-white/85 p-6 shadow-sm backdrop-blur dark:border-violet-900/60 dark:bg-violet-950/35;
+  }
+  .eyebrow {
+    @apply text-sm font-semibold uppercase tracking-[0.2em] text-fuchsia-600 dark:text-fuchsia-300;
+  }
+}
